@@ -1,21 +1,50 @@
 import styled from "styled-components";
 import foodpictures from "../Media/food.png";
+import axios from "axios";
+import { Link, useHistory } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ handleChange, value, setUser }) => {
+  const history = useHistory();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .post("http://localhost:3000/user/login", {
+        email: value.email,
+        password: value.password,
+      })
+      .then((res) => {
+        setUser(res);
+        history.push("/home");
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
   return (
     <MainLoginArea>
-      <StyledForm action="submit">
+      <StyledForm action="submit" onSubmit={handleSubmit}>
         <h1>Login</h1>
         <StyledLabel>
           Email
-          <StyledInput type="email" required />
+          <StyledInput
+            type="email"
+            required
+            onChange={handleChange}
+            name="email"
+          />
         </StyledLabel>
         <StyledLabel>
           Password
-          <StyledInput type="password" required />
+          <StyledInput
+            type="password"
+            required
+            onChange={handleChange}
+            name="password"
+          />
         </StyledLabel>
         <StyledButton type="submit">Login</StyledButton>
-        <p>Not a member? Register here.</p>
+        <Link to="/register">Not a member? Register here.</Link>
       </StyledForm>
       <StyledImageSection src={foodpictures} alt="food" />
     </MainLoginArea>

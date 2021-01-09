@@ -1,11 +1,13 @@
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Nav from "./components/Nav";
+import Home from "./components/Home";
 import Explore from "./components/Explore";
 import Contact from "./components/Contact";
-import AddRecipes from "./components/AddRecipe";
+import AddRecipe from "./components/AddRecipe";
 import styled from "styled-components";
-import { Switch, Route, useLocation } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
+import { useState } from "react";
 
 const MainArea = styled.main`
   display: flex;
@@ -15,21 +17,35 @@ const MainArea = styled.main`
 `;
 
 function App() {
-  const location = useLocation();
-  console.log(location);
+  const [user, setUser] = useState();
+  const [value, SetValue] = useState();
+
+  const handleChange = (e) => {
+    SetValue({
+      ...value,
+      [e.target.name]: e.target.value,
+    });
+  };
+  console.log("VALUE", value);
+  console.log("USER", user);
+
   return (
-    <div ClassName="App">
+    <div className="App">
       <GlobalStyles />
 
-      <Switch location={location} key={location.pathName}></Switch>
       <Route path="/" exact>
         <MainArea>
-          <Login />
+          <Login
+            handleChange={handleChange}
+            setUser={setUser}
+            value={value}
+            user={user}
+          />
         </MainArea>
       </Route>
       <Route path="/register" exact>
         <MainArea>
-          <Register />
+          <Register handleChange={handleChange} value={value} />
         </MainArea>
       </Route>
       <Route path="/explore" exact>
@@ -38,12 +54,25 @@ function App() {
       </Route>
       <Route path="/addrecipe" exact>
         <Nav />
-        <AddRecipes />
+        <AddRecipe handleChange={handleChange} />
       </Route>
       <Route path="/contact" exact>
         <Nav />
         <Contact />
       </Route>
+      <Route
+        path="/home"
+        render={() =>
+          user ? (
+            <div>
+              <Nav />
+              <Home user={user} />
+            </div>
+          ) : (
+            <Redirect to="/" />
+          )
+        }
+      />
     </div>
   );
 }

@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { useLocation } from "react-router-dom";
 
 const Nav = () => {
-  const { pathname } = useLocation();
   return (
     <StyledNav>
       <h1>
