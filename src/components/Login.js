@@ -38,27 +38,27 @@ export const StyledLabel = styled.label`
   color: #fff;
 `;
 
-export const MainLoginArea = styled.main`
+export const MainLoginArea = styled.div`
   display: flex;
   width: 60%;
   height: 700px;
   background: yellow;
-  margin: auto;
 `;
 
 export const StyledForm = styled.form`
   width: 60%;
   display: flex;
   flex-direction: column;
-  background: orange;
+  background: #f96716;
   color: white;
   align-items: center;
   justify-content: space-evenly;
+
   h1 {
-    color: #f71429;
+    color: #fff;
   }
   p {
-    color: #f71429;
+    color: #fff;
     font-size: 20px;
     font-weight: bold;
   }
@@ -68,6 +68,12 @@ export const StyledButton = styled.button`
   width: 305px;
   padding: 10px;
   cursor: pointer;
+  font-size: 20px;
+  transition: all 0.5s ease;
+  &:hover {
+    background: #23d997;
+    color: #fff;
+  }
 `;
 
 export const StyledImageSection = styled.img`
