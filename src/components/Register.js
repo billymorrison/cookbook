@@ -5,11 +5,10 @@ import {
   StyledInput,
   StyledLabel,
   StyledForm,
-  StyledButton,
   MainLoginArea,
   StyledImageSection,
-} from "./Login";
-import userEvent from "@testing-library/user-event";
+  StyledButton,
+} from "./GlobalStyles";
 
 const Register = ({ handleChange, value }) => {
   const history = useHistory();
@@ -72,7 +71,7 @@ const Register = ({ handleChange, value }) => {
           />
         </StyledLabel>
         <StyledButton type="submit">Submit</StyledButton>
-        <Link to="/login">Already a member? Login here.</Link>
+        <Link to="/">Already a member? Login here.</Link>
       </StyledForm>
       <StyledImageSection src={food} alt="food" />
     </MainLoginArea>

@@ -1,7 +1,11 @@
-import StyledForm from "./Login";
-import StyledLabel from "./Login";
-import StyledInput from "./Login";
-import StyledButton from "./Login";
+import {
+  StyledForm,
+  StyledLabel,
+  StyledInput,
+  StyledButton,
+  MainLoginArea,
+} from "./GlobalStyles";
+
 import styled from "styled-components";
 
 const DoubleInput = styled.div`
