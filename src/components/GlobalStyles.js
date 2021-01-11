@@ -4,13 +4,14 @@ export const StyledInput = styled.input`
   border-radius: 5px;
   height: 40px;
   width: 300px;
+  border: 1px solid black;
 `;
 
 export const StyledLabel = styled.label`
   padding-bottom: 5px;
   display: flex;
   flex-direction: column;
-  height: 75px;
+  min-height: 75px;
   justify-content: space-between;
   font-size: 20px;
   color: #fff;
@@ -30,7 +31,10 @@ export const StyledForm = styled.form`
   background: #f96716;
   color: white;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  position: absolute;
+  top: 200px;
+  padding: 30px 0;
 
   h1 {
     color: #fff;
@@ -48,6 +52,7 @@ export const StyledButton = styled.button`
   cursor: pointer;
   font-size: 20px;
   transition: all 0.5s ease;
+  margin-top: 10px;
   &:hover {
     background: #23d997;
     color: #fff;
@@ -61,12 +66,20 @@ export const StyledImageSection = styled.img`
 `;
 
 export const StyledSelect = styled.select`
-  padding-bottom: 10px;
-  margin: 5px;
   border-radius: 6px;
+  width: 308px;
+  height: 45px;
+  border: 1px solid black;
 `;
 
 export const StyledAlert = styled.div`
   font-size: 20px;
   color: darkblue;
 `;
+
+export const StyledTextArea = styled.textarea`
+  border-radius: 5px;
+  min-height: 80px;
+  width: 300px;
+  border: 1px solid black;
+`
