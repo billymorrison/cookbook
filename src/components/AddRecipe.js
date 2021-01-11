@@ -1,5 +1,5 @@
 import {
-  StyledForm,
+  AddRecipeForm,
   StyledLabel,
   StyledInput,
   StyledButton,
@@ -59,7 +59,7 @@ const AddRecipe = () => {
   return (
     <>
       <StyledAlert message={alert.message} success={alert.isSuccess} />
-      <StyledForm onSubmit={handleAddRecipe}>
+      <AddRecipeForm onSubmit={handleAddRecipe}>
         <StyledLabel>
           Title
           <StyledInput
@@ -130,7 +130,7 @@ const AddRecipe = () => {
           />
         </StyledLabel>
         <StyledButton>Submit</StyledButton>
-      </StyledForm>
+      </AddRecipeForm>
     </>
   );
 };

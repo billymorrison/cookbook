@@ -32,8 +32,6 @@ export const StyledForm = styled.form`
   color: white;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: 200px;
   padding: 30px 0;
 
   h1 {
@@ -45,6 +43,11 @@ export const StyledForm = styled.form`
     font-weight: bold;
   }
 `;
+
+export const AddRecipeForm = styled(StyledForm)`
+  position: absolute;
+  top: 200px;
+`
 
 export const StyledButton = styled.button`
   width: 305px;
