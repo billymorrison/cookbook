@@ -56,7 +56,7 @@ function App() {
         <Route path="/addrecipe" exact>
           <Nav />
           <MainArea>
-            <AddRecipe handleChange={handleChange} />
+            <AddRecipe />
           </MainArea>
         </Route>
         <Route path="/contact" exact>

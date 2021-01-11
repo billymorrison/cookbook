@@ -59,3 +59,14 @@ export const StyledImageSection = styled.img`
   width: auto;
   overflow: hidden;
 `;
+
+export const StyledSelect = styled.select`
+  padding-bottom: 10px;
+  margin: 5px;
+  border-radius: 6px;
+`;
+
+export const StyledAlert = styled.div`
+  font-size: 20px;
+  color: darkblue;
+`;
