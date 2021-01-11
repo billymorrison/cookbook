@@ -19,10 +19,6 @@ const Nav = () => {
         <li>
           <Link to="/explore">Explore</Link>
         </li>
-
-        <li>
-          <Link to="/contact">Contact</Link>
-        </li>
       </ul>
     </StyledNav>
   );

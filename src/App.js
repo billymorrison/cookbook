@@ -3,8 +3,9 @@ import Register from "./components/Register";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Explore from "./components/Explore";
-import Contact from "./components/Contact";
+import Recipe from "./components/Recipe";
 import AddRecipe from "./components/AddRecipe";
+import recipe from "./data.json";
 import styled from "styled-components";
 import { Route, Redirect, Switch } from "react-router-dom";
 import { useState } from "react";
@@ -59,9 +60,8 @@ function App() {
             <AddRecipe />
           </MainArea>
         </Route>
-        <Route path="/contact" exact>
-          <Nav />
-          <Contact />
+        <Route path="/recipe" exact>
+          <Recipe recipe={recipe} />
         </Route>
         <Route
           path="/home"
