@@ -3,23 +3,14 @@ import {
   StyledLabel,
   StyledInput,
   StyledButton,
-  MainLoginArea,
   StyledSelect,
   StyledAlert,
+  StyledTextArea,
 } from "./GlobalStyles";
 
-import styled from "styled-components";
 import { useState } from "react";
 import axios from "axios";
 import Alert from "./Alert";
-
-const DoubleInput = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-const IngredientInput = styled(StyledInput)`
-  max-width: 49%;
-`;
 
 const AddRecipe = () => {
   const initialState = {
@@ -27,10 +18,10 @@ const AddRecipe = () => {
       title: "",
       prepTime: "",
       cookTime: "",
-      difficulty: "",
+      difficulty: "Easy",
       serves: "",
       nutrition: "",
-      ingredient: {},
+      ingredients: {},
       method: "",
     },
     alert: {
@@ -51,7 +42,7 @@ const AddRecipe = () => {
     setAlert({ message: "", isSuccess: false });
 
     await axios
-      .post("http://localhost:3000/recipe", recipe)
+      .post("http://localhost:3000/recipes", recipe)
       .then(() => {
         setAlert({
           message: "Recipe Added",
@@ -88,16 +79,18 @@ const AddRecipe = () => {
             name="cookTime"
           />
         </StyledLabel>
-        Difficulty
-        <StyledSelect
-          name="difficulty"
-          value={recipe.difficulty}
-          onChange={handleRecipeChange}
-        >
-          <option value="easy">Easy</option>
-          <option value="medium">Medium</option>
-          <option value="hard">Hard</option>
-        </StyledSelect>
+        <StyledLabel>
+          Difficulty
+          <StyledSelect
+            name="difficulty"
+            value={recipe.difficulty}
+            onChange={handleRecipeChange}
+          >
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </StyledSelect>
+        </StyledLabel>
         <StyledLabel>
           Serves
           <StyledInput
@@ -119,32 +112,16 @@ const AddRecipe = () => {
         </StyledLabel>
         <StyledLabel>
           Ingredients
-          <DoubleInput>
-            <StyledLabel>
-              Ingredient
-              <IngredientInput
-                type="text"
-                required
-                value={recipe.ingredients}
-                onChange={handleRecipeChange}
-                name="ingredientKey"
-              />
-            </StyledLabel>
-            <StyledLabel>
-              Quantity
-              <IngredientInput
-                type="text"
-                required
-                value={recipe.quantity}
-                onChange={handleRecipeChange}
-                name="ingredientValue"
-              />
-            </StyledLabel>
-          </DoubleInput>
+          <StyledTextArea 
+            type="text"
+            required
+            onChange={handleRecipeChange}
+            name="ingredients"
+          />
         </StyledLabel>
         <StyledLabel>
           Method
-          <StyledInput
+          <StyledTextArea
             type="text"
             required
             value={recipe.method}
@@ -152,7 +129,7 @@ const AddRecipe = () => {
             name="method"
           />
         </StyledLabel>
-        <StyledButton />
+        <StyledButton>Submit</StyledButton>
       </StyledForm>
     </>
   );
