@@ -2,10 +2,12 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
-import Explore from "./components/Explore";
 import Recipe from "./components/Recipe";
 import AddRecipe from "./components/AddRecipe";
 import recipe from "./data.json";
+import AllRecipes from "./components/AllRecipes";
+import AddRecipe from "./components/AddRecipe";
+import recipes from "./recipes.json";
 import styled from "styled-components";
 import { Route, Redirect, Switch } from "react-router-dom";
 import { useState } from "react";
@@ -51,7 +53,7 @@ function App() {
         </Route>
         <Route path="/explore" exact>
           <Nav />
-          <Explore />
+          <AllRecipes recipes={recipes} />
         </Route>
 
         <Route path="/addrecipe" exact>
