@@ -4,21 +4,25 @@ const Recipe = ({ recipe }) => {
   return (
     <StyledRecipe>
       <div className="title">
-        <span>{recipe.title}</span>
+        <h1>{recipe.title}</h1>
       </div>
+      <p>by {recipe.displayName}</p>
       <div className="prepTime">
-        <span>{recipe.cookTime}</span>
-      </div>
-      <div className="ingredients">
-        <span>{recipe.ingredients}</span>
-      </div>
-      <div className="difficulty">
-        <span>{recipe.difficulty}</span>
+        <i className="fas fa-clock" />
+        <span>Prep:{recipe.prepTime}</span>
+        <p>Cook:{recipe.cookTime}</p>
       </div>
       <div className="serves">
+        <i class="fas fa-utensils" size="2x"></i>
+        <span>Serves</span>
         <span>{recipe.serves}</span>
       </div>
+      <div className="ingredients">
+        <h2>Ingredients</h2>
+        <span>{recipe.ingredients}</span>
+      </div>
       <div className="method">
+        <h2>Method</h2>
         <span>{recipe.method}</span>
       </div>
       <div className="prepTime">
@@ -29,16 +33,11 @@ const Recipe = ({ recipe }) => {
 };
 
 export const StyledRecipe = styled.div`
-  box-shadow: 0 6px 10px 0 rgba(#66fcf1);
-  transition: 0.3s;
-  margin: 10px;
-  border-radius: 5px;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: auto;
-  width: 18%;
-  background: #f96716;
-  min-height: 30vh;
-  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 `;
 export default Recipe;
