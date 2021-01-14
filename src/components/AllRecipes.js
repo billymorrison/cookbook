@@ -1,6 +1,6 @@
-import React from 'react';
-import RecipeCard from "./RecipeCard"
-import Alert from "./Alert"
+import React from "react";
+import RecipeCard from "./RecipeCard";
+import Alert from "./Alert";
 import styled from "styled-components";
 
 const RecipesGrid = styled.div`
@@ -11,18 +11,18 @@ const RecipesGrid = styled.div`
   width: 80%;
 `;
 
-const AllRecipes = ({recipes}) => {
-    return ( 
-      <RecipesGrid>
-        {alert.message ? (
-            <Alert message={alert.message} />
-        ) : (
-            recipes.map((recipe) => {
-            return <RecipeCard recipe={recipe} key={recipe._id} />;
-            })
-        )}
-      </RecipesGrid>
-     );
-}
- 
+const AllRecipes = ({ recipes }) => {
+  return (
+    <RecipesGrid>
+      {alert.message ? (
+        <Alert message={alert.message} />
+      ) : (
+        recipes.map((recipe) => {
+          return <RecipeCard recipe={recipe} key={recipe._id} />;
+        })
+      )}
+    </RecipesGrid>
+  );
+};
+
 export default AllRecipes;
