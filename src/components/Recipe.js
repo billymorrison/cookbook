@@ -1,10 +1,14 @@
 import styled from "styled-components";
+import chicken from "../Media/chicken.png";
 
 const Recipe = ({ recipe }) => {
   return (
     <StyledRecipe>
       <div className="title">
         <h1>{recipe.title}</h1>
+      </div>
+      <div className="image">
+        <img src={chicken} alt="food" />
       </div>
       <p>by {recipe.displayName}</p>
       <div className="prepTime">
@@ -17,6 +21,10 @@ const Recipe = ({ recipe }) => {
         <span>Serves</span>
         <span>{recipe.serves}</span>
       </div>
+      <div className="difficulty">
+        <i className="fas fa-signal" />
+        <span>Difficulty:{recipe.difficulty}</span>
+      </div>
       <div className="ingredients">
         <h2>Ingredients</h2>
         <span>{recipe.ingredients}</span>
@@ -24,9 +32,6 @@ const Recipe = ({ recipe }) => {
       <div className="method">
         <h2>Method</h2>
         <span>{recipe.method}</span>
-      </div>
-      <div className="prepTime">
-        <span>{recipe.cookTime}</span>
       </div>
     </StyledRecipe>
   );
