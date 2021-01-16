@@ -18,7 +18,7 @@ const AllRecipes = () => {
       .then((result) => setRecipes(result.data))
       .catch((err) => console.log(err));
   }, []);
-  console.log(recipes)
+  
   return (
     <RecipesGrid>
       {alert.message ? (
