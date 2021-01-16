@@ -33,52 +33,53 @@ function App() {
 
   return (
     <div className="App">
-      <GlobalStyles />
-      <Switch>
-        <Route path="/" exact>
-          <MainArea>
-            <Login
-              handleChange={handleChange}
-              setUser={setUser}
-              value={value}
-              user={user}
-            />
-          </MainArea>
-        </Route>
-        <Route path="/register" exact>
-          <MainArea>
-            <Register handleChange={handleChange} value={value} />
-          </MainArea>
-        </Route>
-        <Route path="/explore" exact>
-          <Nav />
-          <AllRecipes recipes={recipes} />
-        </Route>
+      <GlobalStyles>
+        <Switch>
+          <Route path="/" exact>
+            <MainArea>
+              <Login
+                handleChange={handleChange}
+                setUser={setUser}
+                value={value}
+                user={user}
+              />
+            </MainArea>
+          </Route>
+          <Route path="/register" exact>
+            <MainArea>
+              <Register handleChange={handleChange} value={value} />
+            </MainArea>
+          </Route>
+          <Route path="/explore" exact>
+            <Nav />
+            <AllRecipes recipes={recipes} />
+          </Route>
 
-        <Route path="/addrecipe" exact>
-          <Nav />
-          <MainArea>
-            <AddRecipe />
-          </MainArea>
-        </Route>
-        <Route path="/recipe" exact>
-          <Nav />
-          <Recipe recipe={recipe} />
-        </Route>
-        <Route
-          path="/home"
-          render={() =>
-            user ? (
-              <div>
-                <Nav />
-                <Home user={user} />
-              </div>
-            ) : (
-              <Redirect to="/" />
-            )
-          }
-        />
-      </Switch>
+          <Route path="/addrecipe" exact>
+            <Nav />
+            <MainArea>
+              <AddRecipe />
+            </MainArea>
+          </Route>
+          <Route path="/recipe" exact>
+            <Nav />
+            <Recipe recipe={recipe} />
+          </Route>
+          <Route
+            path="/home"
+            render={() =>
+              user ? (
+                <div>
+                  <Nav />
+                  <Home user={user} />
+                </div>
+              ) : (
+                <Redirect to="/" />
+              )
+            }
+          />
+        </Switch>
+      </GlobalStyles>
     </div>
   );
 }
@@ -87,7 +88,6 @@ const GlobalStyles = styled.div`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Lato", sans-serif;
 `;
 
 export default App;

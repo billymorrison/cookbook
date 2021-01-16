@@ -47,7 +47,7 @@ export const StyledForm = styled.form`
 export const AddRecipeForm = styled(StyledForm)`
   position: absolute;
   top: 200px;
-`
+`;
 
 export const StyledButton = styled.button`
   width: 305px;
@@ -85,4 +85,4 @@ export const StyledTextArea = styled.textarea`
   min-height: 80px;
   width: 300px;
   border: 1px solid black;
-`
+`;
