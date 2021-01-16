@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {useHistory} from "react-router-dom";
 
 const Card = styled.div`
   display: flex;
@@ -38,8 +39,9 @@ const Info = styled.p`
 `;
 
 function PropertyCard({recipe}) {
+  const history = useHistory();
   return (
-    <Card>
+    <Card onClick={() => history.push(`/recipes/${recipe._id}`)}>
       <CardHeader>
         <i className="fas fa-hamburger" />
       </CardHeader>

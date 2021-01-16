@@ -12,7 +12,7 @@ import { useState } from "react";
 import axios from "axios";
 import Alert from "./Alert";
 
-const AddRecipe = () => {
+const AddRecipe = ({user}) => {
   const initialState = {
     recipe: {
       title: "",
@@ -23,6 +23,7 @@ const AddRecipe = () => {
       nutrition: "",
       ingredients: {},
       method: "",
+      userId: user._id
     },
     alert: {
       message: "",
