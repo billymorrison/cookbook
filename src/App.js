@@ -6,6 +6,7 @@ import Recipe from "./components/Recipe";
 import AddRecipe from "./components/AddRecipe";
 import recipe from "./data.json";
 import AllRecipes from "./components/AllRecipes";
+import UserRecipes from "./components/UserRecipes";
 import recipes from "./recipes.json";
 import styled from "styled-components";
 import { Route, Redirect, Switch } from "react-router-dom";
@@ -28,9 +29,7 @@ function App() {
       [e.target.name]: e.target.value,
     });
   };
-  console.log("VALUE", value);
-  console.log("USER", user);
-
+console.log(user)
   return (
     <div className="App">
       <GlobalStyles />
@@ -58,7 +57,7 @@ function App() {
         <Route path="/addrecipe" exact>
           <Nav />
           <MainArea>
-            <AddRecipe />
+            <AddRecipe user={user}/>
           </MainArea>
         </Route>
         <Route path="/recipe" exact>

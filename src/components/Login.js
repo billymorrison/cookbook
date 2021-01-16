@@ -22,13 +22,14 @@ const Login = ({ handleChange, value, setUser }) => {
         password: value.password,
       })
       .then((res) => {
-        setUser(res);
+        setUser(res.data);
         history.push("/home");
       })
       .catch((err) => {
         console.error(err);
       });
   };
+
   return (
     <MainLoginArea>
       <StyledForm action="submit" onSubmit={handleSubmit}>
