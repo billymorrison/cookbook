@@ -32,27 +32,27 @@ function App() {
 console.log(user)
   return (
     <div className="App">
-      <GlobalStyles />
-      <Switch>
-        <Route path="/" exact>
-          <MainArea>
-            <Login
-              handleChange={handleChange}
-              setUser={setUser}
-              value={value}
-              user={user}
-            />
-          </MainArea>
-        </Route>
-        <Route path="/register" exact>
-          <MainArea>
-            <Register handleChange={handleChange} value={value} />
-          </MainArea>
-        </Route>
-        <Route path="/explore" exact>
-          <Nav />
-          <AllRecipes recipes={recipes} />
-        </Route>
+      <GlobalStyles>
+        <Switch>
+          <Route path="/" exact>
+            <MainArea>
+              <Login
+                handleChange={handleChange}
+                setUser={setUser}
+                value={value}
+                user={user}
+              />
+            </MainArea>
+          </Route>
+          <Route path="/register" exact>
+            <MainArea>
+              <Register handleChange={handleChange} value={value} />
+            </MainArea>
+          </Route>
+          <Route path="/explore" exact>
+            <Nav />
+            <AllRecipes recipes={recipes} />
+          </Route>
 
         <Route path="/addrecipe" exact>
           <Nav />
@@ -78,6 +78,7 @@ console.log(user)
           }
         />
       </Switch>
+      </GlobalStyles>
     </div>
   );
 }
@@ -86,7 +87,6 @@ const GlobalStyles = styled.div`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Lato", sans-serif;
 `;
 
 export default App;
