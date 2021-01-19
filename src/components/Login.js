@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import foodpictures from "../Media/food.png";
 import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
@@ -53,7 +52,9 @@ const Login = ({ handleChange, value, setUser }) => {
           />
         </StyledLabel>
         <StyledButton type="submit">Login</StyledButton>
-        <Link to="/register">Not a member? Register here.</Link>
+        <Link to="/register">
+          Not a member? <span>Register here.</span>
+        </Link>
       </StyledForm>
       <StyledImageSection src={foodpictures} alt="food" />
     </MainLoginArea>
