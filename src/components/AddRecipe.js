@@ -23,6 +23,7 @@ const AddRecipe = ({user}) => {
       nutrition: "",
       ingredients: {},
       method: "",
+      image: null,
       userId: user._id
     },
     alert: {
@@ -37,13 +38,30 @@ const AddRecipe = ({user}) => {
     setRecipe({ ...recipe, [event.target.name]: event.target.value });
   };
 
+  const handleFileChange = (event) => {
+    setRecipe({
+      ...recipe,
+      image: event.target.files[0]
+    })
+  }
+
+  const setFormData = (data) => {
+    const formData = new FormData();
+    for(const key in data) {
+      formData.set(key, data[key])
+    }
+    return formData
+  }
+
   const handleAddRecipe = async (event) => {
     event.preventDefault();
+    
 
+    const formData = setFormData(recipe)
+    console.log(formData)
     setAlert({ message: "", isSuccess: false });
 
-    await axios
-      .post("http://localhost:3000/recipes", recipe)
+    await axios.post("http://localhost:3000/recipes", formData)
       .then(() => {
         setAlert({
           message: "Recipe Added",
@@ -60,7 +78,7 @@ const AddRecipe = ({user}) => {
   return (
     <>
       <StyledAlert message={alert.message} success={alert.isSuccess} />
-      <AddRecipeForm onSubmit={handleAddRecipe}>
+      <AddRecipeForm onSubmit={handleAddRecipe} encType="multipart/form-data">
         <StyledLabel>
           Title
           <StyledInput
@@ -129,6 +147,15 @@ const AddRecipe = ({user}) => {
             onChange={handleRecipeChange}
             name="method"
           />
+          <StyledLabel>
+          Image
+          <StyledInput
+            type="file"
+            required
+            onChange={handleFileChange}
+            name="image"
+          />
+        </StyledLabel>
         </StyledLabel>
         <StyledButton>Submit</StyledButton>
       </AddRecipeForm>
