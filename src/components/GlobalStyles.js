@@ -42,8 +42,7 @@ export const MainLoginArea = styled.div`
   display: flex;
   width: 60%;
   height: 700px;
-  background: yellow;
-  border-radius: 5px;
+  background: transparent;
 `;
 
 export const StyledForm = styled.form`
@@ -52,7 +51,7 @@ export const StyledForm = styled.form`
   flex-direction: column;
   background: #f9a03f;
   color: #2e2e2e;
-  border-radius: 15px;
+  border-radius: 15px 0px 0px 15px;
   align-items: center;
   justify-content: center;
   padding: 30px 0;
@@ -90,6 +89,7 @@ export const StyledImageSection = styled.img`
   height: 100%;
   width: auto;
   overflow: hidden;
+  border-radius: 0px 15px 15px 0px;
 `;
 
 export const StyledSelect = styled.select`

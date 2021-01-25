@@ -1,4 +1,4 @@
-import foodpictures from "../Media/food.png";
+import foodpictures from "../Media/default1.png";
 import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
 import {
