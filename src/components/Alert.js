@@ -1,11 +1,28 @@
 import PropTypes from "prop-types";
+import styled from "styled-components";
 
-const Alert = ({ message, success }) => {
-  if (!message) return null;
+const ErrorBlock = styled.div`
+  box-sizing: border-box;
+  background-color: lightgreen;
+  border: 1px solid green;
+  width: 300px;
+  height: 40px;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ${({error}) => error && `
+      background-color: salmon;
+      border: 1px solid red;
+    `}
+`;
+
+const Alert = ({error, message}) => {
   return (
-    <div className={`alert alert-${success ? "success" : "error"}`}>
+    <ErrorBlock error={error}>
       {message}
-    </div>
+    </ErrorBlock>
   );
 };
 

@@ -7,6 +7,7 @@ body {
   padding: 0;
   background: #fff1e3;
   color: #2e2e2e;
+  box-sizing: border-box;
   a {
     text-decoration: none;
     color: #2e2e2e;
@@ -26,14 +27,16 @@ export const StyledInput = styled.input`
   width: 300px;
   border: 1px solid black;
   color: #2e2e2e;
+  box-sizing: border-box;
+  padding: 5px;
 `;
 
 export const StyledLabel = styled.label`
-  padding-bottom: 5px;
+  padding-bottom: 2px;
   display: flex;
   flex-direction: column;
   min-height: 75px;
-  justify-content: space-between;
+  justify-content: center;
   font-size: 20px;
   color: #2e2e2e;
 `;
@@ -69,6 +72,7 @@ export const StyledForm = styled.form`
 export const AddRecipeForm = styled(StyledForm)`
   position: absolute;
   top: 200px;
+  border-radius: 15px;
 `;
 
 export const StyledButton = styled.button`
@@ -92,13 +96,6 @@ export const StyledImageSection = styled.img`
   border-radius: 0px 15px 15px 0px;
 `;
 
-export const StyledSelect = styled.select`
-  border-radius: 6px;
-  width: 308px;
-  height: 45px;
-  border: 1px solid black;
-`;
-
 export const StyledAlert = styled.div`
   font-size: 20px;
   color: darkblue;
@@ -109,6 +106,31 @@ export const StyledTextArea = styled.textarea`
   min-height: 80px;
   width: 300px;
   border: 1px solid black;
+  box-sizing: border-box;
+  font: 400 13.3333px Arial;
+  color: #2e2e2e;
+  padding: 5px;
 `;
+
+export const DoubleInputArea = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+`
+
+export const DoubleLabel = styled(StyledLabel)`
+  width: 49%;
+`
+
+export const DoubleInput = styled(StyledInput)`
+  width: 100%;
+`
+
+export const DoubleSelect = styled.select`
+  border-radius: 6px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid black;
+`
 
 export default GlobalStyles;
