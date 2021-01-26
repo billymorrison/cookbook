@@ -9,7 +9,8 @@ import AllRecipes from "./components/AllRecipes";
 import UserRecipes from "./components/UserRecipes";
 import recipes from "./recipes.json";
 import styled from "styled-components";
-import { Route, Redirect, Switch } from "react-router-dom";
+import GlobalStyles from "./components/GlobalStyles";
+import { Route, Redirect, Switch, useLocation } from "react-router-dom";
 import { useState } from "react";
 
 const MainArea = styled.main`
@@ -29,35 +30,36 @@ function App() {
       [e.target.name]: e.target.value,
     });
   };
-console.log(user)
+  console.log(user);
+  const location = useLocation();
   return (
     <div className="App">
-      <GlobalStyles>
-        <Switch>
-          <Route path="/" exact>
-            <MainArea>
-              <Login
-                handleChange={handleChange}
-                setUser={setUser}
-                value={value}
-                user={user}
-              />
-            </MainArea>
-          </Route>
-          <Route path="/register" exact>
-            <MainArea>
-              <Register handleChange={handleChange} value={value} />
-            </MainArea>
-          </Route>
-          <Route path="/explore" exact>
-            <Nav />
-            <AllRecipes recipes={recipes} />
-          </Route>
+      <GlobalStyles />
+      <Switch location={location} key={location.pathname}>
+        <Route path="/" exact>
+          <MainArea>
+            <Login
+              handleChange={handleChange}
+              setUser={setUser}
+              value={value}
+              user={user}
+            />
+          </MainArea>
+        </Route>
+        <Route path="/register" exact>
+          <MainArea>
+            <Register handleChange={handleChange} value={value} />
+          </MainArea>
+        </Route>
+        <Route path="/explore" exact>
+          <Nav />
+          <AllRecipes recipes={recipes} />
+        </Route>
 
         <Route path="/addrecipe" exact>
           <Nav />
           <MainArea>
-            <AddRecipe user={user}/>
+            <AddRecipe user={user} />
           </MainArea>
         </Route>
         <Route path="/recipe" exact>
@@ -78,15 +80,8 @@ console.log(user)
           }
         />
       </Switch>
-      </GlobalStyles>
     </div>
   );
 }
-
-const GlobalStyles = styled.div`
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-`;
 
 export default App;
