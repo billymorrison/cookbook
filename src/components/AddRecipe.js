@@ -3,9 +3,12 @@ import {
   StyledLabel,
   StyledInput,
   StyledButton,
-  StyledSelect,
   StyledAlert,
   StyledTextArea,
+  DoubleInputArea,
+  DoubleInput,
+  DoubleLabel,
+  DoubleSelect,
 } from "./GlobalStyles";
 
 import { useState } from "react";
@@ -89,18 +92,30 @@ const AddRecipe = ({user}) => {
             name="title"
           />
         </StyledLabel>
-        <StyledLabel>
-          Cook Time
-          <StyledInput
-            type="text"
-            value={recipe.cookTime}
-            onChange={handleRecipeChange}
-            name="cookTime"
-          />
-        </StyledLabel>
-        <StyledLabel>
+        <DoubleInputArea>
+          <DoubleLabel>
+            Cook Time
+            <DoubleInput
+              type="text"
+              value={recipe.cookTime}
+              onChange={handleRecipeChange}
+              name="cookTime"
+            />
+          </DoubleLabel>
+          <DoubleLabel>
+            Prep Time
+            <DoubleInput
+              type="text"
+              required
+              onChange={handleRecipeChange}
+              name="prepTime"
+            />
+          </DoubleLabel>
+        </DoubleInputArea>
+        <DoubleInputArea>
+        <DoubleLabel>
           Difficulty
-          <StyledSelect
+          <DoubleSelect
             name="difficulty"
             value={recipe.difficulty}
             onChange={handleRecipeChange}
@@ -108,27 +123,19 @@ const AddRecipe = ({user}) => {
             <option value="easy">Easy</option>
             <option value="medium">Medium</option>
             <option value="hard">Hard</option>
-          </StyledSelect>
-        </StyledLabel>
-        <StyledLabel>
+          </DoubleSelect>
+        </DoubleLabel>
+        <DoubleLabel>
           Serves
-          <StyledInput
+          <DoubleInput
             type="number"
             required
             value={recipe.serves}
             onChange={handleRecipeChange}
             name="serves"
           />
-        </StyledLabel>
-        <StyledLabel>
-          Prep Time
-          <StyledInput
-            type="text"
-            required
-            onChange={handleRecipeChange}
-            name="prepTime"
-          />
-        </StyledLabel>
+        </DoubleLabel>
+        </DoubleInputArea>
         <StyledLabel>
           Ingredients
           <StyledTextArea 
@@ -157,6 +164,7 @@ const AddRecipe = ({user}) => {
           />
         </StyledLabel>
         </StyledLabel>
+        {alert.message && <Alert error={!alert.isSuccess} message={alert.message}/>}
         <StyledButton>Submit</StyledButton>
       </AddRecipeForm>
     </>

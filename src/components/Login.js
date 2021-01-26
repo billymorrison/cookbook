@@ -1,6 +1,8 @@
 import foodpictures from "../Media/default1.png";
+import {useState} from "react";
 import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
+import Alert from "./Alert"
 import {
   StyledInput,
   StyledLabel,
@@ -11,6 +13,8 @@ import {
 } from "./GlobalStyles";
 
 const Login = ({ handleChange, value, setUser }) => {
+  const [error, setError] = useState();
+
   const history = useHistory();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,7 +29,14 @@ const Login = ({ handleChange, value, setUser }) => {
         history.push("/home");
       })
       .catch((err) => {
-        console.error(err);
+        let message;
+        err.response && err.response.data.message
+        ? message = err.response.data.message
+        : message = "Server Error, Please contact site owner"
+        setError({
+          message: message,
+          isSuccess: false
+        });
       });
   };
 
@@ -51,6 +62,7 @@ const Login = ({ handleChange, value, setUser }) => {
             name="password"
           />
         </StyledLabel>
+        {error && <Alert error={!error.isSuccess} message={error.message}/>}
         <StyledButton type="submit">Login</StyledButton>
         <Link to="/register">
           Not a member? <span>Register here.</span>
