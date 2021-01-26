@@ -57,7 +57,12 @@ export const StyledSpan = styled.span`
   padding-left: 25px;
 `;
 
-export const StyledFoodImage = styled.image``;
+export const StyledFoodImage = styled.image`
+  img {
+    height: 500px;
+    width: 500px;
+  }
+`;
 
 export const StyledOverView = styled.div`
   display: flex;
