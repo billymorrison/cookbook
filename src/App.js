@@ -6,12 +6,11 @@ import Recipe from "./components/Recipe";
 import AddRecipe from "./components/AddRecipe";
 import recipe from "./data.json";
 import AllRecipes from "./components/AllRecipes";
-import UserRecipes from "./components/UserRecipes";
-import recipes from "./recipes.json";
 import styled from "styled-components";
 import GlobalStyles from "./components/GlobalStyles";
 import { Route, Redirect, Switch, useLocation } from "react-router-dom";
 import { useState } from "react";
+import { queryAllByAltText } from "@testing-library/react";
 
 const MainArea = styled.main`
   display: flex;
@@ -30,8 +29,9 @@ function App() {
       [e.target.name]: e.target.value,
     });
   };
-  console.log(user);
+
   const location = useLocation();
+
   return (
     <div className="App">
       <GlobalStyles />
@@ -53,7 +53,7 @@ function App() {
         </Route>
         <Route path="/explore" exact>
           <Nav />
-          <AllRecipes recipes={recipes} />
+          <AllRecipes />
         </Route>
 
         <Route path="/addrecipe" exact>
@@ -62,7 +62,7 @@ function App() {
             <AddRecipe user={user} />
           </MainArea>
         </Route>
-        <Route path="/recipe" exact>
+        <Route path="/recipe/:id">
           <Nav />
           <Recipe recipe={recipe} />
         </Route>

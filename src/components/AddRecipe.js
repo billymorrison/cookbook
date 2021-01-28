@@ -3,7 +3,6 @@ import {
   StyledLabel,
   StyledInput,
   StyledButton,
-  StyledAlert,
   StyledTextArea,
   DoubleInputArea,
   DoubleInput,
@@ -71,16 +70,16 @@ const AddRecipe = ({user}) => {
           isSuccess: true,
         });
       })
-      .catch(() =>
+      .catch((err) => {
+        console.log(err)
         setAlert({
           message: "Server error. Please try again later.",
           isSuccess: false,
         })
-      );
+      });
   };
   return (
     <>
-      <StyledAlert message={alert.message} success={alert.isSuccess} />
       <AddRecipeForm onSubmit={handleAddRecipe} encType="multipart/form-data">
         <StyledLabel>
           Title

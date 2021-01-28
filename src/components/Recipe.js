@@ -1,7 +1,20 @@
 import styled from "styled-components";
 import chicken from "../Media/chicken.png";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
+import React, { useEffect, useState } from 'react';
 
-const Recipe = ({ recipe }) => {
+
+const Recipe = () => {
+  const [recipe, setRecipe] = useState({})
+  const location = useLocation();
+
+  useEffect(() => {
+    axios.get(`http://localhost:3000${location.pathname}`)
+      .then((result) => setRecipe(result.data))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <>
       <StyledRecipe>
