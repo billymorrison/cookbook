@@ -1,6 +1,6 @@
 import { Link, useHistory } from "react-router-dom";
+import default1 from "../Media/default1.png";
 import axios from "axios";
-import food from "../Media/food.png";
 import {
   StyledInput,
   StyledLabel,
@@ -73,7 +73,7 @@ const Register = ({ handleChange, value }) => {
         <StyledButton type="submit">Submit</StyledButton>
         <Link to="/">Already a member? Login here.</Link>
       </StyledForm>
-      <StyledImageSection src={food} alt="food" />
+      <StyledImageSection src={default1} alt="food" />
     </MainLoginArea>
   );
 };

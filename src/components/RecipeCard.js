@@ -41,7 +41,7 @@ const Info = styled.p`
 function PropertyCard({recipe}) {
   const history = useHistory();
   return (
-    <Card onClick={() => history.push(`/recipes/${recipe._id}`)}>
+    <Card onClick={() => history.push(`/recipe/${recipe._id}`)}>
       <CardHeader>
         <i className="fas fa-hamburger" />
       </CardHeader>

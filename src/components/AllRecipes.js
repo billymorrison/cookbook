@@ -25,7 +25,7 @@ const AllRecipes = () => {
         <Alert message={alert.message} />
       ) : (
         recipes && recipes.map((recipe) => {
-          return <RecipeCard recipe={recipe} key={recipe._id} />;
+          return <RecipeCard recipe={recipe} key={recipe._id}/>;
         })
       )}
     </RecipesGrid>
