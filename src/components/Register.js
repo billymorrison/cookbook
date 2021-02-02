@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { Link, useHistory } from "react-router-dom";
 import default1 from "../Media/default1.png";
 import axios from "axios";
@@ -10,7 +11,16 @@ import {
   StyledButton,
 } from "./GlobalStyles";
 
-const Register = ({ handleChange, value }) => {
+const Register = ({}) => {
+  const [value, SetValue] = useState();
+
+  const handleChange = (e) => {
+    SetValue({
+      ...value,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   const history = useHistory();
   const handleSubmit = (e) => {
     e.preventDefault();

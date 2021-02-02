@@ -4,7 +4,7 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
 body {
   margin: 0;
-  padding: 0;
+  padding: 0 0 40px 0;
   background: #fff1e3;
   color: #2e2e2e;
   box-sizing: border-box;
@@ -46,6 +46,10 @@ export const MainLoginArea = styled.div`
   width: 60%;
   height: 700px;
   background: transparent;
+  border-radius: 15px;
+  -moz-box-shadow:    0px 1px 11px -1px rgba(148,110,0,0.55);
+  -webkit-box-shadow: 0px 1px 11px -1px rgba(148,110,0,0.55);
+  box-shadow:         0px 1px 11px -1px rgba(148,110,0,0.55);
 `;
 
 export const StyledForm = styled.form`
@@ -70,9 +74,8 @@ export const StyledForm = styled.form`
 `;
 
 export const AddRecipeForm = styled(StyledForm)`
-  position: absolute;
-  top: 200px;
   border-radius: 15px;
+  margin-top: -100px;
 `;
 
 export const StyledButton = styled.button`
@@ -132,5 +135,12 @@ export const DoubleSelect = styled.select`
   height: 40px;
   border: 1px solid black;
 `
+
+export const RecipesGrid = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+  margin: auto;
+`;
 
 export default GlobalStyles;
