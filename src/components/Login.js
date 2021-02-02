@@ -12,8 +12,16 @@ import {
   StyledImageSection,
 } from "./GlobalStyles";
 
-const Login = ({ handleChange, value, setUser }) => {
+const Login = ({ setUser }) => {
   const [error, setError] = useState();
+  const [value, SetValue] = useState();
+
+  const handleChange = (e) => {
+    SetValue({
+      ...value,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const history = useHistory();
   const handleSubmit = (e) => {

@@ -26,7 +26,8 @@ const AddRecipe = ({user}) => {
       ingredients: {},
       method: "",
       image: null,
-      userId: user._id
+      userId: user._id,
+      userNiceName: user.displayName
     },
     alert: {
       message: "",
@@ -92,6 +93,15 @@ const AddRecipe = ({user}) => {
           />
         </StyledLabel>
         <DoubleInputArea>
+        <DoubleLabel>
+            Prep Time
+            <DoubleInput
+              type="text"
+              required
+              onChange={handleRecipeChange}
+              name="prepTime"
+            />
+          </DoubleLabel>
           <DoubleLabel>
             Cook Time
             <DoubleInput
@@ -99,15 +109,6 @@ const AddRecipe = ({user}) => {
               value={recipe.cookTime}
               onChange={handleRecipeChange}
               name="cookTime"
-            />
-          </DoubleLabel>
-          <DoubleLabel>
-            Prep Time
-            <DoubleInput
-              type="text"
-              required
-              onChange={handleRecipeChange}
-              name="prepTime"
             />
           </DoubleLabel>
         </DoubleInputArea>

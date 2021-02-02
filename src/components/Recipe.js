@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import chicken from "../Media/chicken.png";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import React, { useEffect, useState } from 'react';
@@ -14,44 +13,45 @@ const Recipe = () => {
       .then((result) => setRecipe(result.data))
       .catch((err) => console.log(err));
   }, []);
-
+  console.log(recipe)
   return (
     <>
       <StyledRecipe>
         <StyledFoodImage>
-          <img src={chicken} alt="food" />
+          <img src={recipe.imageUrl} alt="food" />
         </StyledFoodImage>
         <StyledOverView>
           <div>
             <h1>{recipe.title}</h1>
           </div>
-          <p>by {recipe.displayName}</p>
+          <p>by {recipe.userNiceName}</p>
           <StyledIconSet>
-            <i className="fas fa-clock fa-lg" />
-            <span> Prep:{recipe.prepTime}</span>
+            <i className="fas fa-clock fa-lg" style={{width: '30px'}}/>
+            <div>
+            <span> Prep: {recipe.prepTime}</span>
             <br />
-            <StyledSpan>Cook:{recipe.cookTime}</StyledSpan>
+            <span>Cook: {recipe.cookTime}</span>
+            </div>
           </StyledIconSet>
           <StyledIconSet>
-            <i class="fas fa-utensils fa-lg"></i>
-            <span> Serves </span>
-            <span>{recipe.serves}</span>
+            <i class="fas fa-utensils fa-lg" style={{width: '30px'}}></i>
+            <span>Serves: {recipe.serves}</span>
           </StyledIconSet>
           <StyledIconSet>
-            <i className="fas fa-signal " />
-            <span> Difficulty:{recipe.difficulty}</span>
+            <i className="fas fa-signal " style={{width: '30px'}} />
+            <span> Difficulty: {recipe.difficulty}</span>
           </StyledIconSet>
         </StyledOverView>
       </StyledRecipe>
       <StyledLayoutContent>
-        <StyledInstructions>
+        <StyledIngredients>
           <h2>Ingredients</h2>
           <span>{recipe.ingredients}</span>
-        </StyledInstructions>
-        <StyledInstructions>
+        </StyledIngredients>
+        <StyledMethod>
           <h2>Method</h2>
           <span>{recipe.method}</span>
-        </StyledInstructions>
+        </StyledMethod>
       </StyledLayoutContent>
     </>
   );
@@ -61,9 +61,9 @@ export const StyledRecipe = styled.div`
   display: flex;
   flex-direction: row;
   max-width: 60%;
-
+  justify-content: space-around;
   align-items: center;
-  margin: auto;
+  margin: 40px auto;
   padding: 0;
 `;
 export const StyledSpan = styled.span`
@@ -72,17 +72,21 @@ export const StyledSpan = styled.span`
 
 export const StyledFoodImage = styled.image`
   img {
-    height: 500px;
-    width: 500px;
+    height: auto;
+    width: auto;
+    max-height: 300px;
+    max-width: 300px;
   }
 `;
 
 export const StyledOverView = styled.div`
   display: flex;
   flex-direction: column;
+  width: 60%;
 `;
 
 export const StyledIconSet = styled.div`
+  display: flex;
   padding-top: 20px;
 `;
 
@@ -94,8 +98,15 @@ export const StyledLayoutContent = styled.div`
   justify-content: space-between;
 `;
 
-export const StyledInstructions = styled.div`
+export const StyledIngredients = styled.div`
   display: flex;
   flex-direction: column;
+  white-space: pre-wrap;
 `;
+
+export const StyledMethod = styled(StyledIngredients)`
+  max-width: 60%
+`
+
+
 export default Recipe;

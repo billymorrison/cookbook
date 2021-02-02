@@ -21,14 +21,6 @@ const MainArea = styled.main`
 
 function App() {
   const [user, setUser] = useState();
-  const [value, SetValue] = useState();
-
-  const handleChange = (e) => {
-    SetValue({
-      ...value,
-      [e.target.name]: e.target.value,
-    });
-  };
 
   const location = useLocation();
 
@@ -39,16 +31,14 @@ function App() {
         <Route path="/" exact>
           <MainArea>
             <Login
-              handleChange={handleChange}
               setUser={setUser}
-              value={value}
               user={user}
             />
           </MainArea>
         </Route>
         <Route path="/register" exact>
           <MainArea>
-            <Register handleChange={handleChange} value={value} />
+            <Register />
           </MainArea>
         </Route>
         <Route path="/explore" exact>
@@ -57,8 +47,9 @@ function App() {
         </Route>
 
         <Route path="/addrecipe" exact>
-          <Nav />
+        <Nav />
           <MainArea>
+            
             <AddRecipe user={user} />
           </MainArea>
         </Route>

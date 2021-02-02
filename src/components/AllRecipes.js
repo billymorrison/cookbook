@@ -1,15 +1,8 @@
 import React, {useEffect, useState} from "react";
 import RecipeCard from "./RecipeCard";
 import Alert from "./Alert";
-import styled from "styled-components";
+import { RecipesGrid } from "./GlobalStyles"
 import axios from "axios";
-
-const RecipesGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  width: 80%;
-  margin: auto;
-`;
 
 const AllRecipes = () => {
   const [recipes, setRecipes] = useState([])
