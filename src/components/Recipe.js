@@ -17,6 +17,7 @@ const Recipe = () => {
   return (
     <>
       <StyledRecipe>
+        <OverviewContainer>
         <StyledFoodImage>
           <img src={recipe.imageUrl} alt="food" />
         </StyledFoodImage>
@@ -42,6 +43,7 @@ const Recipe = () => {
             <span> Difficulty: {recipe.difficulty}</span>
           </StyledIconSet>
         </StyledOverView>
+        </OverviewContainer>
       </StyledRecipe>
       <StyledLayoutContent>
         <StyledIngredients>
@@ -60,11 +62,12 @@ const Recipe = () => {
 export const StyledRecipe = styled.div`
   display: flex;
   flex-direction: row;
-  max-width: 60%;
-  justify-content: space-around;
+  width: 100%;
+  justify-content: center;
   align-items: center;
-  margin: 40px auto;
-  padding: 0;
+  margin: 0 auto 40px auto;
+  padding: 40px 0;
+  background-color: #f9a03f;
 `;
 export const StyledSpan = styled.span`
   padding-left: 25px;
@@ -82,7 +85,7 @@ export const StyledFoodImage = styled.image`
 export const StyledOverView = styled.div`
   display: flex;
   flex-direction: column;
-  width: 60%;
+  margin-left: 80px;
 `;
 
 export const StyledIconSet = styled.div`
@@ -105,7 +108,13 @@ export const StyledIngredients = styled.div`
 `;
 
 export const StyledMethod = styled(StyledIngredients)`
-  max-width: 60%
+  max-width: 60%;
+`
+
+export const OverviewContainer = styled.div`
+  display: flex;
+  justify-content: start;
+  width: 60%;
 `
 
 
