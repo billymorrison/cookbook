@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Recipe from "./components/Recipe";
 import AddRecipe from "./components/AddRecipe";
+import SideBar from "./components/SideBar";
 import recipe from "./data.json";
 import AllRecipes from "./components/AllRecipes";
 import styled from "styled-components";
@@ -45,11 +46,9 @@ function App() {
           <Nav />
           <AllRecipes />
         </Route>
-
         <Route path="/addrecipe" exact>
         <Nav />
           <MainArea>
-            
             <AddRecipe user={user} />
           </MainArea>
         </Route>

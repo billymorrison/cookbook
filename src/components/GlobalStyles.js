@@ -25,14 +25,14 @@ export const StyledInput = styled.input`
   border-radius: 5px;
   height: 40px;
   width: 300px;
-  border: 1px solid black;
+  border: none;
   color: #2e2e2e;
   box-sizing: border-box;
   padding: 5px;
 `;
 
 export const StyledLabel = styled.label`
-  padding-bottom: 2px;
+  padding-bottom: 6px;
   display: flex;
   flex-direction: column;
   min-height: 75px;
@@ -76,6 +76,9 @@ export const StyledForm = styled.form`
 export const AddRecipeForm = styled(StyledForm)`
   border-radius: 15px;
   margin-top: -100px;
+  -moz-box-shadow:    0px 1px 11px -1px rgba(148,110,0,0.55);
+  -webkit-box-shadow: 0px 1px 11px -1px rgba(148,110,0,0.55);
+  box-shadow:         0px 1px 11px -1px rgba(148,110,0,0.55);
 `;
 
 export const StyledButton = styled.button`
@@ -108,7 +111,7 @@ export const StyledTextArea = styled.textarea`
   border-radius: 5px;
   min-height: 80px;
   width: 300px;
-  border: 1px solid black;
+  border: none;
   box-sizing: border-box;
   font: 400 13.3333px Arial;
   color: #2e2e2e;
@@ -133,7 +136,7 @@ export const DoubleSelect = styled.select`
   border-radius: 6px;
   width: 100%;
   height: 40px;
-  border: 1px solid black;
+  border: none;
 `
 
 export const RecipesGrid = styled.div`

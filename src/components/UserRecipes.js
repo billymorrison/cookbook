@@ -15,6 +15,7 @@ const UserRecipes = ({user}) => {
 
   return (
     <RecipesGrid>
+      <h1>{user.displayName}'s cookbook</h1>
       {alert.message ? (
         <Alert message={alert.message} />
       ) : (
