@@ -28,7 +28,7 @@ const Register = ({}) => {
       console.log("Passwords match!");
 
     axios
-      .post("http://localhost:3000/user/register", {
+      .post("https://cookbook-bm.herokuapp.com/user/register", {
         email: value.email,
         password: value.password,
         displayName: value.displayName,

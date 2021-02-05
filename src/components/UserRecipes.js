@@ -8,7 +8,7 @@ const UserRecipes = ({user}) => {
     const [recipes, setRecipes] = useState([])
 
     useEffect(() => {
-    axios.get(`http://localhost:3000/recipes/${user._id}`)
+    axios.get(`https://cookbook-bm.herokuapp.com/recipes/${user._id}`)
         .then((result) => setRecipes(result.data))
         .catch((err) => console.log(err));
     }, []);
