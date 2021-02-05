@@ -4,14 +4,12 @@ import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Recipe from "./components/Recipe";
 import AddRecipe from "./components/AddRecipe";
-import SideBar from "./components/SideBar";
 import recipe from "./data.json";
 import AllRecipes from "./components/AllRecipes";
 import styled from "styled-components";
 import GlobalStyles from "./components/GlobalStyles";
 import { Route, Redirect, Switch, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { queryAllByAltText } from "@testing-library/react";
 
 const MainArea = styled.main`
   display: flex;
