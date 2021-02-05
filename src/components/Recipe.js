@@ -12,7 +12,7 @@ const Recipe = () => {
     axios.get(`https://cookbook-bm.herokuapp.com${location.pathname}`)
       .then((result) => setRecipe(result.data))
       .catch((err) => console.log(err));
-  }, []);
+  }, [location]);
   console.log(recipe)
   return (
     <>

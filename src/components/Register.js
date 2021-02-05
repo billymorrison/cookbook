@@ -11,7 +11,7 @@ import {
   StyledButton,
 } from "./GlobalStyles";
 
-const Register = ({}) => {
+const Register = () => {
   const [value, SetValue] = useState();
 
   const handleChange = (e) => {
