@@ -28,7 +28,7 @@ const Login = ({ setUser }) => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3000/user/login", {
+      .post("https://cookbook-bm.herokuapp.com/user/login", {
         email: value.email,
         password: value.password,
       })

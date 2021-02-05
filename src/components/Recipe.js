@@ -9,7 +9,7 @@ const Recipe = () => {
   const location = useLocation();
 
   useEffect(() => {
-    axios.get(`http://localhost:3000${location.pathname}`)
+    axios.get(`https://cookbook-bm.herokuapp.com${location.pathname}`)
       .then((result) => setRecipe(result.data))
       .catch((err) => console.log(err));
   }, []);

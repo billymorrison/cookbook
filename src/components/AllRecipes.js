@@ -7,7 +7,7 @@ import axios from "axios";
 const AllRecipes = () => {
   const [recipes, setRecipes] = useState([])
   useEffect(() => {
-    axios.get("http://localhost:3000/recipes")
+    axios.get("https://cookbook-bm.herokuapp.com/recipes")
       .then((result) => setRecipes(result.data))
       .catch((err) => console.log(err));
   }, []);

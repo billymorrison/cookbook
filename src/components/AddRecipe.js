@@ -64,7 +64,7 @@ const AddRecipe = ({user}) => {
     console.log(formData)
     setAlert({ message: "", isSuccess: false });
 
-    await axios.post("http://localhost:3000/recipes", formData)
+    await axios.post("https://cookbook-bm.herokuapp.com/recipes", formData)
       .then(() => {
         setAlert({
           message: "Recipe Added",
