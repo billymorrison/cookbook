@@ -41,7 +41,7 @@ const InfoBlock = styled.div`
   width: 60%;
 `
 
-const Info = styled.p`
+const Info = styled.div`
   display: flex;
   font-size: 1.1rem;
   padding: 5px 10px;
@@ -60,7 +60,7 @@ const Image = styled.img`
 function PropertyCard({recipe}) {
   const history = useHistory();
   return (
-    <Card onClick={() => history.push(`/recipe/${recipe._id}`)}>
+    <Card onClick={() => history.push(`/recipe/${recipe._id}`)} data-testid="recipeCard">
       {recipe.imageUrl 
         ? <Image src={recipe.imageUrl} /> 
         : <CardHeader><i className="fas fa-hamburger"></i></CardHeader>
@@ -72,7 +72,7 @@ function PropertyCard({recipe}) {
           <div>
             <span> Prep: {recipe.prepTime}</span>
             <br />
-            <span>Cook: {recipe.cookTime}</span>
+            <span> Cook: {recipe.cookTime}</span>
           </div>
         </Info>
         <Info>
