@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="sc-hKgILt cvLgTT"
+  data-testid="login"
+>
+  <form
+    action="submit"
+    className="sc-eCssSg dlleA-D"
+    onSubmit={[Function]}
+  >
+    <h1>
+      Login
+    </h1>
+    <label
+      className="sc-dlfnbm iJivHU"
+    >
+      Email
+      <input
+        className="sc-gsTCUz iPtMfY"
+        name="email"
+        onChange={[Function]}
+        required={true}
+        type="email"
+      />
+    </label>
+    <label
+      className="sc-dlfnbm iJivHU"
+    >
+      Password
+      <input
+        className="sc-gsTCUz iPtMfY"
+        name="password"
+        onChange={[Function]}
+        required={true}
+        type="password"
+      />
+    </label>
+    <button
+      className="sc-gKsewC lmpqCe"
+      type="submit"
+    >
+      Login
+    </button>
+    <a
+      href="/register"
+      onClick={[Function]}
+    >
+      Not a member? 
+      <span>
+        Register here.
+      </span>
+    </a>
+  </form>
+  <img
+    alt="food"
+    className="sc-iBPRYJ dSUqbp"
+    src="default1.png"
+  />
+</div>
+`;

@@ -20,7 +20,7 @@ const ErrorBlock = styled.div`
 
 const Alert = ({error, message}) => {
   return (
-    <ErrorBlock error={error}>
+    <ErrorBlock error={error} data-testid="alert">
       {message}
     </ErrorBlock>
   );

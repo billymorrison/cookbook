@@ -11,11 +11,11 @@ const Recipe = () => {
   useEffect(() => {
     axios.get(`https://cookbook-bm.herokuapp.com${location.pathname}`)
       .then((result) => setRecipe(result.data))
-      .catch((err) => console.log(err));
+      .catch((err) => err);
   }, [location]);
   console.log(recipe)
   return (
-    <>
+    <div data-testid="recipe">
       <StyledRecipe>
         <OverviewContainer>
         <StyledFoodImage>
@@ -55,7 +55,7 @@ const Recipe = () => {
           <span>{recipe.method}</span>
         </StyledMethod>
       </StyledLayoutContent>
-    </>
+    </div>
   );
 };
 

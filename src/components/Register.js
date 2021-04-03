@@ -41,7 +41,7 @@ const Register = () => {
   };
 
   return (
-    <MainLoginArea>
+    <MainLoginArea data-testid="register">
       <StyledForm action="submit" onSubmit={handleSubmit}>
         <h1>Register</h1>
         <StyledLabel>

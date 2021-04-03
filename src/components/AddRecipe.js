@@ -81,7 +81,7 @@ const AddRecipe = ({user}) => {
   };
   return (
     <>
-      <AddRecipeForm onSubmit={handleAddRecipe} encType="multipart/form-data">
+      <AddRecipeForm onSubmit={handleAddRecipe} encType="multipart/form-data" data-testid="addRecipe">
         <StyledLabel>
           Title
           <StyledInput
