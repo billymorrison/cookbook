@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="sc-dlfnbm lUGTh"
+  data-testid="register"
+>
+  <form
+    action="submit"
+    className="sc-hKgILt icauyc"
+    onSubmit={[Function]}
+  >
+    <h1>
+      Register
+    </h1>
+    <label
+      className="sc-gsTCUz fYmKmH"
+    >
+      Email
+      <input
+        className="sc-bdfBwQ bDhmHQ"
+        name="email"
+        onChange={[Function]}
+        required={true}
+        type="email"
+      />
+    </label>
+    <label
+      className="sc-gsTCUz fYmKmH"
+    >
+      Display Name
+      <input
+        className="sc-bdfBwQ bDhmHQ"
+        name="displayName"
+        onChange={[Function]}
+        required={true}
+        type="text"
+      />
+    </label>
+    <label
+      className="sc-gsTCUz fYmKmH"
+    >
+      Password
+      <input
+        className="sc-bdfBwQ bDhmHQ"
+        name="password"
+        onChange={[Function]}
+        required={true}
+        type="password"
+      />
+    </label>
+    <label
+      className="sc-gsTCUz fYmKmH"
+    >
+      Confirm Password
+      <input
+        className="sc-bdfBwQ bDhmHQ"
+        name="confirmPassword"
+        onChange={[Function]}
+        required={true}
+        type="password"
+      />
+    </label>
+    <button
+      className="sc-jSgupP iSLeyX"
+      type="submit"
+    >
+      Submit
+    </button>
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      Already a member? Login here.
+    </a>
+  </form>
+  <img
+    alt="food"
+    className="sc-gKsewC cvRtih"
+    src="default1.png"
+  />
+</div>
+`;

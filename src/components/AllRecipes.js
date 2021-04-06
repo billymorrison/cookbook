@@ -9,11 +9,11 @@ const AllRecipes = () => {
   useEffect(() => {
     axios.get("https://cookbook-bm.herokuapp.com/recipes")
       .then((result) => setRecipes(result.data))
-      .catch((err) => console.log(err));
+      .catch((err) => err);
   }, []);
   
   return (
-    <RecipesGrid>
+    <RecipesGrid data-testid="allRecipes">
       {alert.message ? (
         <Alert message={alert.message} />
       ) : (

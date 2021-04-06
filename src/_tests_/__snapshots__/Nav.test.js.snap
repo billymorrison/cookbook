@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<nav
+  className="sc-bdfBwQ hlevpe"
+  data-testid="nav"
+>
+  <h1>
+    <a
+      href="/home"
+      id="logo"
+      onClick={[Function]}
+    >
+      Cook Book
+    </a>
+  </h1>
+  <ul>
+    <li>
+      <a
+        href="/home"
+        onClick={[Function]}
+      >
+        Home
+      </a>
+      <div
+        className="sc-gsTCUz ePDNcn"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </li>
+    <li>
+      <a
+        href="/addrecipe"
+        onClick={[Function]}
+      >
+        Add Recipe
+      </a>
+      <div
+        className="sc-gsTCUz ePDNcn"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </li>
+    <li>
+      <a
+        href="/explore"
+        onClick={[Function]}
+      >
+        Explore
+      </a>
+      <div
+        className="sc-gsTCUz ePDNcn"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </li>
+  </ul>
+</nav>
+`;

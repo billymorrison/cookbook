@@ -49,7 +49,7 @@ const Login = ({ setUser }) => {
   };
 
   return (
-    <MainLoginArea>
+    <MainLoginArea data-testid="login">
       <StyledForm action="submit" onSubmit={handleSubmit}>
         <h1>Login</h1>
         <StyledLabel>

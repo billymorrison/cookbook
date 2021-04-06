@@ -10,11 +10,11 @@ const UserRecipes = ({user}) => {
     useEffect(() => {
     axios.get(`https://cookbook-bm.herokuapp.com/recipes/${user._id}`)
         .then((result) => setRecipes(result.data))
-        .catch((err) => console.log(err));
+        .catch((err) => err);
     }, [user]);
 
   return (
-    <RecipesGrid>
+    <RecipesGrid data-testid="userRecipes">
       <h1>{user.displayName}'s cookbook</h1>
       {alert.message ? (
         <Alert message={alert.message} />

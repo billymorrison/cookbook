@@ -1,20 +1,23 @@
-import { shallow, mount, render } from "enzyme";
+import ReactDOM from "react-dom"
 import RecipeCard from "../components/RecipeCard";
+import { recipe } from "./mocks/recipe"
+import { render, cleanup } from "@testing-library/react"
+import "@testing-library/jest-dom/extend-expect";
+import renderer from "react-test-renderer";
 
-it("expect to render card component", () => {
-  const recipe = {
-    _id: "5ff4bcbdc91e0e20e2a5be26",
-    title: "Mexican chicken burger",
-    displayName: "tomo",
-    prepTime: "15 mins",
-    cookTime: "60 mins",
-    difficulty: "Hard",
-    serves: 4,
-    ingredients: "onion",
-    method:
-      "In a large, heavy saucepan, heat the oil. Add the onion, garlic, green chilli, ginger and some seasoning. Fry on a medium heat for 10 mins or until soft",
-    __v: 0,
-  };
-  expect(shallow(<RecipeCard recipe={recipe} />).length).toEqual(1);
-  expect(toJson(<RecipeCard />)).toMatchSnapshot();
+afterEach(cleanup);
+
+it("renders recipe card component without crashing", () => {
+  const div = document.createElement("div");
+  ReactDOM.render(<RecipeCard recipe={recipe}></RecipeCard>, div)
 });
+
+it("renders recipe card correctly", () => {
+  const {getByTestId} = render(<RecipeCard recipe={recipe}></RecipeCard>);
+  expect(getByTestId("recipeCard")).toHaveTextContent("Mexican chicken burger");
+})
+
+it("matches snapshot", () => {
+  const tree = renderer.create(<RecipeCard recipe={recipe}></RecipeCard>).toJSON();
+  expect(tree).toMatchSnapshot();
+})

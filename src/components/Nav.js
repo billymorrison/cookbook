@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Nav = () => {
   const { pathname } = useLocation();
   return (
-    <StyledNav>
+    <StyledNav data-testid="nav">
       <h1>
         <Link id="logo" to="/home">
           Cook Book

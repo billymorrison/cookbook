@@ -1,3 +1,75 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`expect to render card component 1`] = `ShallowWrapper {}`;
+exports[`matches snapshot 1`] = `
+<div
+  className="sc-bdfBwQ iVwPzy"
+  data-testid="recipeCard"
+  onClick={[Function]}
+>
+  <div
+    className="sc-gsTCUz eUXZjv"
+  >
+    <i
+      className="fas fa-hamburger"
+    />
+  </div>
+  <div
+    className="sc-hKgILt bKKnog"
+  >
+    <h4
+      className="sc-dlfnbm hhHbbO"
+    >
+      Mexican chicken burger
+    </h4>
+    <div
+      className="sc-eCssSg kvMIzk"
+    >
+      <i
+        className="fas fa-clock fa-lg"
+        style={
+          Object {
+            "width": "30px",
+          }
+        }
+      />
+      <div>
+        <span>
+           Prep: 
+          15 mins
+        </span>
+        <br />
+        <span>
+           Cook: 
+          60 mins
+        </span>
+      </div>
+    </div>
+    <div
+      className="sc-eCssSg bJUjBG"
+    >
+      <i
+        className="fas fa-signal"
+        style={
+          Object {
+            "width": "30px",
+          }
+        }
+      />
+       Hard
+    </div>
+    <div
+      className="sc-eCssSg bJUjBG"
+    >
+      <i
+        className="fas fa-at"
+        style={
+          Object {
+            "width": "30px",
+          }
+        }
+      />
+       undefined
+    </div>
+  </div>
+</div>
+`;

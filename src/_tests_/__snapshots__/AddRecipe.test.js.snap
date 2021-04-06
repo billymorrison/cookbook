@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<form
+  className="sc-hKgILt sc-eCssSg icauyc jACgWr"
+  data-testid="addRecipe"
+  encType="multipart/form-data"
+  onSubmit={[Function]}
+>
+  <label
+    className="sc-gsTCUz fYmKmH"
+  >
+    Title
+    <input
+      className="sc-bdfBwQ bDhmHQ"
+      name="title"
+      onChange={[Function]}
+      required={true}
+      type="text"
+      value=""
+    />
+  </label>
+  <div
+    className="sc-pFZIQ hDlVFw"
+  >
+    <label
+      className="sc-gsTCUz sc-jrAGrp fYmKmH gnLDqD"
+    >
+      Prep Time
+      <input
+        className="sc-bdfBwQ sc-kEjbxe bDhmHQ ipVbvI"
+        name="prepTime"
+        onChange={[Function]}
+        required={true}
+        type="text"
+      />
+    </label>
+    <label
+      className="sc-gsTCUz sc-jrAGrp fYmKmH gnLDqD"
+    >
+      Cook Time
+      <input
+        className="sc-bdfBwQ sc-kEjbxe bDhmHQ ipVbvI"
+        name="cookTime"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </label>
+  </div>
+  <div
+    className="sc-pFZIQ hDlVFw"
+  >
+    <label
+      className="sc-gsTCUz sc-jrAGrp fYmKmH gnLDqD"
+    >
+      Difficulty
+      <select
+        className="sc-iqHYGH gLrfSs"
+        name="difficulty"
+        onChange={[Function]}
+        value="Easy"
+      >
+        <option
+          value="easy"
+        >
+          Easy
+        </option>
+        <option
+          value="medium"
+        >
+          Medium
+        </option>
+        <option
+          value="hard"
+        >
+          Hard
+        </option>
+      </select>
+    </label>
+    <label
+      className="sc-gsTCUz sc-jrAGrp fYmKmH gnLDqD"
+    >
+      Serves
+      <input
+        className="sc-bdfBwQ sc-kEjbxe bDhmHQ ipVbvI"
+        name="serves"
+        onChange={[Function]}
+        required={true}
+        type="number"
+        value=""
+      />
+    </label>
+  </div>
+  <label
+    className="sc-gsTCUz fYmKmH"
+  >
+    Ingredients
+    <textarea
+      className="sc-fubCfw duJyEv"
+      name="ingredients"
+      onChange={[Function]}
+      required={true}
+      type="text"
+    />
+  </label>
+  <label
+    className="sc-gsTCUz fYmKmH"
+  >
+    Method
+    <textarea
+      className="sc-fubCfw duJyEv"
+      name="method"
+      onChange={[Function]}
+      required={true}
+      type="text"
+      value=""
+    />
+    <label
+      className="sc-gsTCUz fYmKmH"
+    >
+      Image
+      <input
+        className="sc-bdfBwQ bDhmHQ"
+        name="image"
+        onChange={[Function]}
+        required={true}
+        type="file"
+      />
+    </label>
+  </label>
+  
+  <button
+    className="sc-jSgupP iSLeyX"
+  >
+    Submit
+  </button>
+</form>
+`;
